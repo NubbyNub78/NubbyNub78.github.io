@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator 2.0 | Blank</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script>
+      // History Function
+      
+        
+      // Backspace Function
+      function backspace(calc) {
+          size = calc.display.value.length;
+          calc.display.value = calc.display.value.substring(0, size-1);
+      }
+        
+      // Creating function to calculate factorial of element
+      function calculate(calc) {
+            
+          // Check if function include ! character then calculate factorial of number
+          if(calc.display.value.includes("!")) {
+                
+              size = calc.display.value.length;
+              n = Number(calc.display.value.substring(0, size-1));
+              f = 1;
+                
+              for(i = 2; i <= n; i++)
+                  f = f*i;
+              calc.display.value = f;
+          }
+            
+          // If function include % character then calculate the % of number
+          else if(calc.display.value.includes("%")) {
+                
+              size = calc.display.value.length;
+              n = Number(calc.display.value.substring(0, size-1));
+              calc.display.value = n/100;
+          }
+
+          else
+              // Otherwise evalute and execute output
+              calc.display.value = eval(calc.display.value);
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1 id="headerText">Calculator</h1>
+    </header>
+    <div id="calcDiv">
+      <form name="calc">
+        <table id="calc">
+          <!--Display-->
+          <tr>
+            <td colspan="5" rowspan="1" id="displayCell" name="display" onkeypress="return event.charCode >= 48
+              && event.charCode <= 57" type="text"><input type="text" id="display"></td>
+          </tr>
+          <!--Scientific Funtions-->
+          <tr>
+            <td rowspan="1" class="calcCell"><input type="button" value="Sin" onclick="calc.display.value+='MATH.sin('" ></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="Cos" onclick="calc.display.value+='MATH.cos('"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="Tan" onclick="calc.display.value+='MATH.tan('"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="Log" onclick="calc.display.value+='Math.log('"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="E" onclick="calc.display.value+='Math.E'"></td>
+          </tr>
+          <tr>
+            <td rowspan="1" class="calcCell"><input type="button" value="Asin" onclick="calc.display.value+='Math.asin('"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="Acos" onclick="calc.display.value+='Math.acos('"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="Atan" onclick="calc.display.value+='Math.atan('"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="N!" onclick="calc.display.value+='!'"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="&#960;" onclick="calc.display.value+='Math.PI'"></td>
+          </tr>
+          <tr>
+            <td rowspan="1" class="calcCell"><input type="button" value="%" onclick="calc.display.value+='%'"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="^" onclick="calc.display.value+='Math.pow('"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="&#8730;" onclick="calc.display.value+='Math.sqrt('"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="(" onclick="calc.display.value+='('"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value=")" onclick="calc.display.value+=')'"></td>
+          </tr>
+          <!--Regular Functions-->
+          <tr>
+            <td rowspan="1" class="calcCell"><input type="button" value="1" onclick="calc.display.value+='1'"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="2" onclick="calc.display.value+='2'"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="3" onclick="calc.display.value+='3'" id="3"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="&#xF7;" onclick="calc.display.value+='/'"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="AC" onclick="calc.display.value=''"></td>
+          </tr>
+          <tr>
+            <td rowspan="1" class="calcCell"><input type="button" value="4" onclick="calc.display.value+='4'"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="5" onclick="calc.display.value+='5'"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="6" onclick="calc.display.value+='6'"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="&#215;" onclick="calc.display.value+='*'"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="Del" onclick="backspace(this.form)"></td>
+          </tr>
+          <tr>
+            <td rowspan="1" class="calcCell"><input type="button" value="7" onclick="calc.display.value+='7'"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="8" onclick="calc.display.value+='8'"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="9" onclick="calc.display.value+='9'"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="+" onclick="calc.display.value+='+'"></td>
+            <td rowspan="2" class="calcCell"><input type="button" value="=" onclick="calculate(this.form)"></td>
+          </tr>
+          <tr>
+            <td rowspan="1" class="calcCell"><input type="button" value="0" onclick="calc.display.value+='0'" id="0"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="." onclick="calc.display.value+='.'"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="00" onclick="calc.display.value+='00'"></td>
+            <td rowspan="1" class="calcCell"><input type="button" value="-" onclick="calc.display.value+='-'"></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

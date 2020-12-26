@@ -1,0 +1,129 @@
+/*Main selectors*/
+body {
+  margin:0;
+  padding:0;
+  border:0;
+}
+
+header {
+  margin:0;
+  padding:10px 15px 10px 15px;
+  border:0;
+  width:calc(100vw - 30px);
+  height:auto;
+  position:fixed;
+  z-index:9999;
+  font-family:helvetica;
+  background-color:silver;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin:0;
+  padding:0;
+  border:0;
+}
+
+/*Main calculator*/
+.calcCell {
+  margin:0;
+  padding:0;
+  border:0;
+  width:11vh;
+  height:11vh;
+}
+
+.operator {
+  background-color:lightgrey !important;
+}
+
+#headerText {
+  margin:0;
+  padding:0;
+  border:0;
+  background: -webkit-linear-gradient(#000428, #004e92);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#calcDiv {
+  margin:0 0 0 calc(100vw - 55vh);
+  padding:0;
+  border:0;
+  width:calc(55vh);
+  height:100vh;
+  position:absolute;
+  z-index:10000;
+  border-radius:30px 0px 0px 30px;
+  background-color:silver;
+  box-shadow:-0.5px -0.5px 5px;
+}
+
+#calc {
+  margin:0;
+  padding:0;
+  border:0;
+  border-collapse:collapse;
+}
+
+#displayCell {
+  margin:0;
+  padding:0;
+  border:0;
+}
+
+input[type="text"] {
+  margin:0;
+  padding:20px 10px 0px 10px;
+  border:0;
+  width:calc(55vh - 20px);
+  height:calc(23.35vh - 20px);
+  border-radius:30px 0 0 0;
+  font-size:20px;
+  background-image:linear-gradient(to bottom right, #000428, #004e92);
+  color:#fff;
+  outline:none;
+}
+
+input[type="button"] {
+  margin:0;
+  padding:0;
+  border:0;
+  width:100%;
+  height:100%;
+  background-color:#F5F5F5;
+  font-size:15px;
+  font-weight:bold;
+  font-family:helvetica;
+  outline:none;
+  transition:0.4s;
+}
+
+input[type="button"]:hover {
+  background-color:lightgrey;
+  color:#fff !important;
+  font-size:16px;
+}
+
+input[onclick="calculate(this.form)"] {
+  margin:0;
+  padding:0;
+  border:0;
+  width:100%;
+  height:100%;
+  border-radius:30px 0 0 0;
+  background-image:linear-gradient(to bottom right, #000428, #004e92);
+  color:#000;
+ }
+ 
+input[value="Sin"],[value="Cos"], [value="Tan"], [value="Log"], [value="E"], [value="Asin"], [value="Acos"], [value="Atan"], [value="N!"], [onclick="calc.display.value+='Math.PI'"], [value="%"], [value="^"], [onclick="calc.display.value+='Math.sqrt('"], [value="("], [value=")"], [onclick="calc.display.value+='/'"], [value="AC"], [onclick="calc.display.value+='*'"], [value="Del"], [value="+"], [value="-"] {
+  background-color:silver !important;
+  color:#000 !important;
+ }
+ 
+ input[onclick="calc.display.value+='3'"] {
+  border-radius:0 30px 0 0;
+ }
+ 
+  input[onclick="calc.display.value+='0'"] {
+  border-radius:0 0 0 30px;
+ }

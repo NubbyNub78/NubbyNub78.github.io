@@ -1,2 +1,2 @@
 # NubbyNub78.github.io
-Calculator
+This is a random calculator. Don't view on mobile.

@@ -16,7 +16,7 @@
           calc.display.value = calc.display.value.substring(0, size-1);
       }
         
-      // Creating function to calculate factorial of element
+      // Factorial Function
       function calculate(calc) {
             
           // Check if function include ! character then calculate factorial of number
@@ -27,11 +27,11 @@
               f = 1;
                 
               for(i = 2; i <= n; i++)
-                  f = f*i;
+                f = f*i;
               calc.display.value = f;
           }
             
-          // If function include % character then calculate the % of number
+          // Percent function
           else if(calc.display.value.includes("%")) {
                 
               size = calc.display.value.length;
@@ -47,7 +47,7 @@
   </head>
   <body>
     <header>
-      <h1 id="headerText">Calculator</h1>
+      <h1 id="headerText" onClick="window.location.reload();">Calculator</h1>
     </header>
     <div id="calcDiv">
       <form name="calc">
@@ -55,7 +55,7 @@
           <!--Display-->
           <tr>
             <td colspan="5" rowspan="1" id="displayCell" name="display" onkeypress="return event.charCode >= 48
-              && event.charCode <= 57" type="text"><input type="text" id="display"></td>
+              && event.charCode <= 57" type="text"><input type="text" id="display" readonly></td>
           </tr>
           <!--Scientific Funtions-->
           <tr>

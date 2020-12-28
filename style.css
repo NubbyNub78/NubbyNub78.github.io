@@ -3,6 +3,7 @@ body {
   margin:0;
   padding:0;
   border:0;
+  overflow:hidden;
 }
 
 header {
@@ -23,6 +24,17 @@ h1, h2, h3, h4, h5, h6, p {
   border:0;
 }
 
+/*Other stuff*/
+#headerText {
+  margin:0;
+  padding:0;
+  border:0;
+  background: -webkit-linear-gradient(#000428, #004e92);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor:pointer;
+}
+
 /*Main calculator*/
 .calcCell {
   margin:0;
@@ -34,15 +46,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 .operator {
   background-color:lightgrey !important;
-}
-
-#headerText {
-  margin:0;
-  padding:0;
-  border:0;
-  background: -webkit-linear-gradient(#000428, #004e92);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 #calcDiv {
@@ -113,17 +116,17 @@ input[onclick="calculate(this.form)"] {
   border-radius:30px 0 0 0;
   background-image:linear-gradient(to bottom right, #000428, #004e92);
   color:#000;
- }
+}
  
 input[value="Sin"],[value="Cos"], [value="Tan"], [value="Log"], [value="E"], [value="Asin"], [value="Acos"], [value="Atan"], [value="N!"], [onclick="calc.display.value+='Math.PI'"], [value="%"], [value="^"], [onclick="calc.display.value+='Math.sqrt('"], [value="("], [value=")"], [onclick="calc.display.value+='/'"], [value="AC"], [onclick="calc.display.value+='*'"], [value="Del"], [value="+"], [value="-"] {
   background-color:silver !important;
   color:#000 !important;
- }
+}
  
- input[onclick="calc.display.value+='3'"] {
+input[onclick="calc.display.value+='3'"] {
   border-radius:0 30px 0 0;
- }
+}
  
-  input[onclick="calc.display.value+='0'"] {
+input[onclick="calc.display.value+='0'"] {
   border-radius:0 0 0 30px;
- }
+}
